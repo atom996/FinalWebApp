@@ -1,12 +1,14 @@
+//app_dev.js
+//import fetch from "node-fetch";
 //Express instance
-var express = require('express');
-var app = express();
+const express = require('express');
+const app = express();
 
-//Routes
+//api_route module being used in this file so that creating new routes is easier in the future.
+var api_routes = require('./app_routes.js');
+app.use('/api', api_routes);
 
-app.get('/api/byName/:nameInput', () => {
-  
-});
+app.use('/home',express.static('front_end'));
 
 app.listen(3000, function() {
   console.log('Example app listening on port 3000!');

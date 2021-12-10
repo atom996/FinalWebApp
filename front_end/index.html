@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Tab Title</title>
+    <!-- Bootstrap & CSS Sheet -->
+    <!-- include bootstap dependencies -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+    <!-- Include handlebars library -->
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+    <!--Meta Tags-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--Link to Javscript file and CSS Sheet-->
+    <link rel="stylesheet" href="styling.css">
+    <!-- Script for Server -->
+    <script src="app_front.js"></script>
+  </head>
+
+  <body>
+
+
+    <div class="jumbotron jumbotron-fluid bg-danger text-light text-center">
+      <h1>St. John's Course Lookup System</h1>
+    </div>
+
+
+    <div class="row ml-2">
+      <div class="col-sm-2 card-body form-group">
+        <label for="dropSelect">Sort by:</label><br>
+        <select id="dropSelect" name="dropSelect" class="btn btn-light dropdown-toggle bg-light text-dark mb-5">
+          <option value="opOne">Course Title</option>
+          <option value="opTwo">Course Code</option>
+          <option value="opThree">Course Instructor</option>
+          <option value="opFour">Course Level</option>
+        </select>
+
+        <form onsubmit="return false;" id="inputForm">
+          <label for="usrSpecific">Search: </label><br>
+          <input type="text" id="usrSpecific" name="usrSpecific" value="" class="mb-2"><br>
+          <input id="displayByName" type="button" onclick="updateView(this)" value="Query" data-querytype="by_name">
+        </form>
+      </div>
+
+
+      <div class="col-sm-8 pt-4 card" id="results">
+
+      </div>
+
+      <div class="col-sm-2 pt-4">
+        <img src="stjohns.png" class="w-75 mh-15" alt="St. Johns">
+      </div>
+
+     </div>
+
+  </body>
+</html>
+
+<script id="show_results" type="text/x-handlebars-template">
+  <ul class="card-body">
+    {{#each courses}}
+      <li class="card-text">Course Code: {{this.course_code}} <br> Course Level: {{this.course_level}} <br> Course Title: {{this.title}} <br> Course Instructor: {{this.instructor}} <br><br></li>
+    {{/each}}
+  </ul>
+</script>
