@@ -1,6 +1,7 @@
 //app_dev.js
 //import fetch from "node-fetch";
 //Express instance
+const port = process.env.PORT || 3000;
 const express = require('express');
 const app = express();
 
@@ -10,6 +11,6 @@ app.use('/api', api_routes);
 
 app.use('/home',express.static('front_end'));
 
-app.listen(3000, function() {
+app.listen(port, function() {
   console.log('Example app listening on port 3000!');
 });

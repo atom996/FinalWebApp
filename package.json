@@ -1,0 +1,24 @@
+{
+  "name": "finalwebapp",
+  "version": "1.0.0",
+  "description": "final web app for class",
+  "main": "app_dev.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/atom996/FinalWebApp.git"
+  },
+  "keywords": [
+    "git",
+    "webapp",
+    "project"
+  ],
+  "author": "alpin tomorri",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/atom996/FinalWebApp/issues"
+  },
+  "homepage": "https://github.com/atom996/FinalWebApp#readme"
+}
