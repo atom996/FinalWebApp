@@ -9,6 +9,9 @@ let rawdata = fs.readFileSync('./courses.json');
 let course = JSON.parse(rawdata);
 
 //Routes
+router.get('', (req,res) => {
+    res.sendfile(path.resolve('../client/login.html'));
+});
 //Default
 router.get('/', (req,res) => {
   let outputJSON = { courses : course["courses"] };
