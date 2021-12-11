@@ -9,13 +9,11 @@ let rawdata = fs.readFileSync('./courses.json');
 let course = JSON.parse(rawdata);
 
 //Routes
-router.get('', (req,res) => {
-    res.sendfile(path.resolve('./front_end/index.html'));
-});
 //Default
 router.get('/', (req,res) => {
-  let outputJSON = { courses : course["courses"] };
-  res.json(outputJSON);
+  //let outputJSON = { courses : course["courses"] };
+  //res.json(outputJSON);
+  res.sendfile(path.resolve('./front_end/index.html'));
 });
 //Route for getting information by instructor name
 router.get('/byName/:nameInput', (req,res) => {
