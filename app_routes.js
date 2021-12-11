@@ -10,7 +10,7 @@ let course = JSON.parse(rawdata);
 
 //Routes
 router.get('', (req,res) => {
-    res.sendfile(path.resolve('../client/login.html'));
+    res.sendfile(path.resolve('./front_end/index.html'));
 });
 //Default
 router.get('/', (req,res) => {
